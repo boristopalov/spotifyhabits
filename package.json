@@ -1034,7 +1034,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server-auth",
+    "client:install": "cd client && yarn",
+    "client": "cd client && yarn start",
+    "server": "node server"
   },
   "repository": {
     "type": "git",
