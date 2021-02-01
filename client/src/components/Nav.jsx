@@ -91,9 +91,9 @@ const StyledLink = styled(NavLink).attrs({ activeClassName: isActive })`
 const Nav = () => {
   return (
       <StyledNavContainer>
-        <StyledHeader href="/">
+        <NavLink href="/">
           Spotify Habits
-          </StyledHeader>
+          </NavLink>
         <StyledMenu>
           <StyledLink
             exact to="/">
