@@ -28,7 +28,7 @@ const StyledMenu = styled.ul`
 `;
 
 
-const StyledHeader = styled.a`
+const HomeLink = styled(NavLink)`
   display: flex;
   padding-left: 1em;
   text-decoration: none;
@@ -91,9 +91,9 @@ const StyledLink = styled(NavLink).attrs({ activeClassName: isActive })`
 const Nav = () => {
   return (
       <StyledNavContainer>
-        <NavLink exact to="/">
+        <HomeLink exact to="/">
           Spotify Habits
-          </NavLink>
+          </HomeLink>
         <StyledMenu>
           <StyledLink
             exact to="/">
