@@ -9,6 +9,8 @@
 
 require('dotenv').config();
 
+
+
 const express = require("express"); // Express web server framework
 const request = require("request"); // "Request" library
 const cors = require("cors");
@@ -17,16 +19,16 @@ const cookieParser = require("cookie-parser");
 const history = require("connect-history-api-fallback");
 const path = require('path');
 
-
-const client_id = process.env.CLIENT_ID; // Your client id
+const client_id = process.env.CLIENT_ID;// Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
-// let redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; // Your redirect uri
-// let frontend_uri = process.env.FRONTEND_URI || 'http://localhost:3000';
+let redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; // Your redirect uri
+let frontend_uri = process.env.FRONTEND_URI || 'http://localhost:3000';
 
 
-let redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
-let frontend_uri = 'http://localhost:3000';
+// let redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+// let frontend_uri = 'http://localhost:3000';
+
 let PORT = process.env.PORT || 8888;
 
 /**
@@ -154,7 +156,6 @@ app.get("/callback", function (req, res) {
 app.get("/refresh_token", function (req, res) {
   // requesting access token from refresh token
   const refresh_token = req.query.refresh_token;
-  console.log('GETTING REFRESH TOKEN FROM BACKEND')
   const authOptions = {
     url: "https://accounts.spotify.com/api/token",
     headers: {

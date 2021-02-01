@@ -12,7 +12,6 @@ const refresh_uri =
     ? "http://localhost:8888/refresh_token"
     : "https://spotifyhabits.herokuapp.com/refresh_token";
 
-    
 const getAccessToken = () => window.localStorage.getItem('access_token');
 
 const setAccessToken = (token) => {
