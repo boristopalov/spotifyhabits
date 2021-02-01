@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const login_uri =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:8888/login"
-    : "https://spotify-habits.herokuapp.com/login";
+    : "https://spotifyhabits.herokuapp.com/login";
 
 
 const StyledLoginButton = styled.a`
