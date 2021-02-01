@@ -20,7 +20,7 @@
     "client": "cd client && yarn start",
     "start": "node server-auth",
     "server": "node server-auth",
-    "heroku-postbuild": "cd client/ && yarn && yarn install --production && yarn build"
+    "heroku-postbuild": "cd client && yarn && yarn install --production && yarn build"
   },
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
