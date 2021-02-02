@@ -21,13 +21,13 @@ const path = require('path');
 
 const client_id = process.env.CLIENT_ID;// Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
-// let redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; // Your redirect uri
-// let frontend_uri = process.env.FRONTEND_URI || 'http://localhost:3000';
+let redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; // Your redirect uri
+let frontend_uri = process.env.FRONTEND_URI || 'http://localhost:3000';
 
 
 
-let redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-let frontend_uri = 'http://localhost:3000';
+// let redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+// let frontend_uri = 'http://localhost:3000';
 
 let PORT = process.env.PORT || 8888;
 
