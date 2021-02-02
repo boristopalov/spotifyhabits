@@ -104,6 +104,7 @@ const Artists = () => {
     const initFetch = async () => {
       const req = await getLongTermArtists();
       dispatch({ type: "long", payload: req.data });
+      window.scrollTo(0, 0);
     }
     initFetch();
   }, []);

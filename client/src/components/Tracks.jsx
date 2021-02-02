@@ -147,6 +147,7 @@ const Tracks = () => {
     const initFetch = async () => {
       const req = await getLongTermTracks();
       dispatch({ type: "long", payload: req.data });
+      window.scrollTo(0, 0);
     };
     initFetch();
   }, []);

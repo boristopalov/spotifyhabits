@@ -13,6 +13,8 @@ import {
 import { useEffect, useState, useReducer } from 'react';
 import { calculateTopGenres, calculateListeningHabits, calculateTopDecades, calculateHabitsText } from '../utils';
 import Loading from "./Loading";
+import { NavLink } from "react-router-dom";
+
 
 
 const Heading = styled.div`
@@ -144,6 +146,11 @@ const GradientButtonTwo = styled.a`
   }
 `;
 
+const NoDecLink = styled(NavLink)`
+  text-decoration: none;
+
+`;
+
 
 const initialState = {
   time: "long",
@@ -254,6 +261,7 @@ const Habits = () => {
           decades: topDecades,
           habits: habitsText
         }})
+        window.scrollTo(0, 0);
       };
       initFetch();
         
@@ -319,16 +327,14 @@ const Habits = () => {
                 <h2> {habits["positivity"]} </h2>
               </LeftText>
             </BodyContainer>
-              <Buttons>
-                <GradientButtonOne href={"/tracks"}>
-                  {" "}
-                  See my top tracks{" "}
-                </GradientButtonOne>
-                <GradientButtonTwo href={"/artists"}>
-                  {" "}
-                  See my top artists{" "}
-                </GradientButtonTwo>
-              </Buttons>
+            <Buttons>
+              <NoDecLink exact to="/tracks">
+                <GradientButtonOne> See my top tracks </GradientButtonOne>
+              </NoDecLink>
+              <NoDecLink exact to="/artists">
+                <GradientButtonTwo> See my top artists </GradientButtonTwo>
+              </NoDecLink>
+            </Buttons>
           </div>
         ) : (
           <Loading />
