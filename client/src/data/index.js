@@ -2,10 +2,10 @@ import axios from 'axios';
 import querystring from 'query-string';
 
 //1 hour in milliseconds to keep track of token expiration 
-const EXPIRATION_TIME = 3600000;
+// const EXPIRATION_TIME = 3600000;
 
 
-//const EXPIRATION_TIME = 3600;
+const EXPIRATION_TIME = 1000;
 
 const refresh_uri =
   process.env.NODE_ENV !== "production"
@@ -16,10 +16,11 @@ const getAccessToken = () => window.localStorage.getItem('access_token');
 
 const setAccessToken = (token) => {
   window.localStorage.setItem('access_token', token);
+};
 
-  if (!getAccessToken() || (Date.now() - getTokenTimestamp()) > EXPIRATION_TIME) {
-    window.localStorage.setItem("access_token_timestamp", Date.now());
-  }
+
+const setTokenTimestamp = () => { 
+  window.localStorage.setItem("access_token_timestamp", Date.now());
 };
 
 const setRefreshToken = (token) => {
@@ -31,7 +32,6 @@ const getRefreshToken = () => window.localStorage.getItem('refresh_token');
 const getTokenTimestamp = () => window.localStorage.getItem('access_token_timestamp');
 
 async function refreshAccessToken() {
-  console.log(`${refresh_uri}?refresh_token=${getRefreshToken()}`);
    try {
     const { data } = await axios.get(`${refresh_uri}?refresh_token=${getRefreshToken()}`)
     console.log('hello')
@@ -39,7 +39,7 @@ async function refreshAccessToken() {
     const { access_token } = data;
     setAccessToken(access_token);
     console.log(getAccessToken());
-
+    setTokenTimestamp();
     window.location.reload();
     return;
   }
@@ -56,20 +56,25 @@ export const getToken = () => {
   let refreshToken = parsed.refresh_token;
   
 
+
   console.log((Date.now() - getTokenTimestamp()))
   console.log(accessToken, refreshToken)
   
   if (!accessToken || accessToken === undefined) {
     accessToken = getAccessToken();
   }
+  else { 
+    setTokenTimestamp()
+  }
   if (!refreshToken || refreshToken === undefined) {
     refreshToken = getRefreshToken();
   }
-  if ((Date.now() - getTokenTimestamp()) > EXPIRATION_TIME && (!getAccessToken())) {
+
+  if (getTokenTimestamp() && (Date.now() - getTokenTimestamp() > EXPIRATION_TIME)) {
+    console.log('refreshing token');
     refreshAccessToken();
     return accessToken;
   }
-
 
   setAccessToken(accessToken);
   setRefreshToken(refreshToken);
