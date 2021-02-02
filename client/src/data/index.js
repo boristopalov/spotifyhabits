@@ -51,7 +51,6 @@ async function refreshAccessToken() {
 export const getToken = () => {
 
   console.log(getTokenTimestamp());
-
   let parsed = querystring.parse(window.location.search);
   let accessToken = parsed.access_token;
   let refreshToken = parsed.refresh_token;
@@ -66,7 +65,7 @@ export const getToken = () => {
   if (!refreshToken || refreshToken === undefined) {
     refreshToken = getRefreshToken();
   }
-  if ((Date.now() - getTokenTimestamp()) > EXPIRATION_TIME) {
+  if ((Date.now() - getTokenTimestamp()) > EXPIRATION_TIME && (!getAccessToken())) {
     refreshAccessToken();
     return accessToken;
   }
