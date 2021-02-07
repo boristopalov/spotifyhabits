@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { SpotifyIcon } from "../images/spotify.js";
+import media from "../styles/media";
+
 
 
 const ArtistGrid = styled.div`
@@ -60,6 +62,12 @@ const ArtistName = styled.div`
   margin-left: 20px;
   font-weight: 500;
   font-size: 20px;
+  ${media.tablet`
+    font-size: 14px;
+  `};
+  ${media.phablet`
+    font-size: 12px;
+  `};
 `;
 
 
@@ -79,6 +87,12 @@ const ArtistPic = styled.div`
 const ArtistGenres = styled.span`
   text-align: center;
   font-size: 20px;
+  ${media.tablet`
+    font-size: 14px;
+  `};
+  ${media.phablet`
+    font-size: 12px;
+  `};
   color: #9b9b9b;
 `;
 
@@ -86,6 +100,12 @@ const ArtistGenres = styled.span`
 const PopularityFollowers = styled.span`
   text-align: center;
   font-size: 20px;
+  ${media.tablet`
+    font-size: 14px;
+  `};
+  ${media.phablet`
+    font-size: 12px;
+  `};
   color: #9b9b9b;
 `;
 

@@ -3,20 +3,24 @@ import { useEffect, useReducer } from 'react';
 import { getShortTermArtists, getMediumTermArtists, getLongTermArtists } from '../data';
 import Artist from './Artist';
 import Loading from "./Loading";
+import media from '../styles/media'
 
 
 
 const ColumnHeadings = styled.div`
   display: grid;
   grid-template-columns: 100px 1fr 1fr 1fr;
+  ${media.tablet`
+    grid-template-columns: 50px 1fr 1fr 1fr;
+  `};
   margin-bottom: 60px;
   align-items: center;
   font-size: 30px;
   font-weight: 700;
   margin-left: 10px;
-
-    
-  
+  ${media.tablet`
+    font-size: 18px;
+  `};
 `;
 
 const Header = styled.span`
@@ -26,10 +30,16 @@ const Header = styled.span`
 
 const ArtistHeader = styled.span`
   padding-left: 50px;
+  ${media.tablet`
+    padding-left: 25px;
+  `};
 `;
 
 const ArtistsContainer = styled.ul`
   margin-top: 50px;
+  ${media.tablet`
+    padding-left: 0px;
+  `};
 `;
 
 
@@ -38,6 +48,10 @@ const TimeFrames = styled.div`
   padding-top: 25px;
   margin-left: 50px;
   padding-bottom: 25px;
+  ${media.tablet`
+    justify-content: space-around;
+    margin: 30px 0 0;
+  `};
 `;
 
 const TimeFrame = styled.button`

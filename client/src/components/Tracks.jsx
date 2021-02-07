@@ -7,19 +7,25 @@ import {
 import styled from "styled-components";
 import { SpotifyIcon } from "../images/spotify.js";
 import Loading from "./Loading";
+import media from '../styles/media'
 
 
 const TracksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  ${media.tablet`
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  `};
+  ${media.phablet`
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  `};
   grid-gap: 20px;
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
-
   img {
     max-width: 100%;
-    max-height: 100%; 
+    max-height: 100%;
   }
 `;
 
@@ -28,6 +34,12 @@ const Track = styled.div`
   flex-direction: column;
   text-align: left;
   font-size: 22px;
+  ${media.tablet`
+    font-size: 16px;
+  `};
+  ${media.phablet`
+    font-size: 12px;
+  `};
   margin-top: 5px;
   font-weight: 500;
 `;
@@ -35,7 +47,12 @@ const Track = styled.div`
 const ArtistAlbum = styled.div`
   color: #9b9b9b;
   font-size: 16px;
-
+  ${media.tablet`
+    font-size: 12px;
+  `};
+  ${media.phablet`
+    font-size: 10px;
+  `};
 `;
 
 
@@ -67,6 +84,14 @@ const TrackLink = styled.a`
 const AlbumArtwork = styled.div`
   display: inline-block;
   position: relative;
+  ${media.tablet`
+    width: 120px;
+    height: 120px;
+  `};
+  ${media.phablet`
+    width: 100px;
+    height: 100px;
+  `};
   cursor: pointer;
   &:hover,
   &:focus,
@@ -86,6 +111,10 @@ const TimeFrames = styled.div`
   padding-top: 25px;
   margin-left: 50px;
   padding-bottom: 25px;
+  ${media.tablet`
+    justify-content: space-around;
+    margin: 30px 0 0;
+  `};
 `;
 
 const TimeFrame = styled.button`
