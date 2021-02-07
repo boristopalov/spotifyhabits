@@ -12,9 +12,8 @@ const AppContainer = styled.div`
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  margin: 0 auto;
+  margin: 0px auto;
   max-width: 1400px;
-  min-height: 100vh;
   ${media.desktop`
     padding: 60px 50px;
   `};

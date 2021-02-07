@@ -7,14 +7,21 @@ import media from '../styles/media'
 
 const StyledLogin = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
   h1 {
     font-size: 4em;
+    ${media.tablet`
+      font-size: 2.5em;
+    `};
   }
   h3 {
     font-size: 2em;
+    ${media.tablet`
+      font-size: 2em;
+    `};
   }
 `;
 
