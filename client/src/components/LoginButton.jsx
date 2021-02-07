@@ -13,13 +13,13 @@ const StyledLoginButton = styled.a`
   border-radius: 50px;
   padding: 20px 40px;
   border-width: 0px;
-  margin: 20px 0 70px;
+  //margin: 20px 0 70px;
   min-width: 160px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
 
-  margin-left: 11.5em;
+  //margin-left: 11.5em;
 
   &:hover {
     opacity: 60%;

@@ -14,11 +14,11 @@ import { useEffect, useState, useReducer } from 'react';
 import { calculateTopGenres, calculateListeningHabits, calculateTopDecades, calculateHabitsText } from '../utils';
 import Loading from "./Loading";
 import { NavLink } from "react-router-dom";
+import media from "../styles/media";
 
 
 
 const Heading = styled.div`
-    margin: auto;
     text-align: center;
     padding-top: 50px;
     h1 {
@@ -31,9 +31,8 @@ const Heading = styled.div`
 const TimeFrames = styled.div`
   display: flex;
   padding-top: 25px;
-  //margin: auto;
   justify-content: center;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
 `;
 
 const TimeFrame = styled.button`
@@ -60,17 +59,53 @@ const TimeFrame = styled.button`
 
 
 const BodyContainer = styled.div`
-  padding: 0px 100px;
+  ${media.giant`
+    padding: 0px 100px;
+  `}
+  ${media.desktop`
+    padding: 0px 100px;
+  `}
+  ${media.tablet`
+    padding: 0px 25px;
+  `} 
+   ${media.phablet`
+    padding: 0px 0px;
+  `}
 `;
 
 
 
 const LeftText = styled.div`
   display: flex;
-  padding: 50px 0;
+  ${media.giant`
+    padding: 50px 0;
+  `}
+  ${media.desktop`
+    padding: 50px 0;
+  `}
+  ${media.tablet`
+    padding: 25px 0;
+  `} 
+   ${media.phablet`
+    padding: 0px 0;
+  `} 
   h2 {
-    font-size: 3em;
-    max-width: 350px;
+    ${media.desktop` 
+      font-size: 3em;
+      max-width: 350px;
+    `};
+    ${media.giant` 
+      font-size: 3em;
+      max-width: 350px;
+    `};
+    ${media.tablet`
+      font-size: 2em;
+      max-width: 250px;
+      `};
+    ${media.phablet`
+      font-size: 1.5em;
+      max-width: 150px;
+      `};
   }
 `;
 
@@ -78,10 +113,36 @@ const LeftText = styled.div`
 const RightText = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 50px 0;
+
+  ${media.giant`
+    padding: 50px 0;
+  `}
+  ${media.desktop`
+    padding: 50px 0;
+  `}
+  ${media.tablet`
+    padding: 25px 0;
+  `} 
+   ${media.phablet`
+    padding: 0px 0;
+  `} 
   h2 {
-    font-size: 3em;
-    max-width: 350px;
+    ${media.desktop` 
+      font-size: 3em;
+      max-width: 350px;
+    `};
+    ${media.giant` 
+      font-size: 3em;
+      max-width: 350px;
+    `};
+    ${media.tablet`
+      font-size: 2em;
+      max-width: 250px;
+      `};
+    ${media.phablet`
+      font-size: 1.5em;
+      max-width: 150px;
+      `};
   }
 `;
 
@@ -95,19 +156,16 @@ const Buttons = styled.div`
 
 
 const LogoutButton = styled.a`
-  display: block;
+  margin-top: 30px;
   background: linear-gradient(90deg, #00f5a0 0%, #00d9f5 100%);
   border-radius: 50px;
-  padding: 15px 0;
+  padding: 15px 35px;
   border-width: 0px;
-  margin: auto;
   max-width: 12vw;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.2em;
-  margin-top: 10px;
-
   &:hover {
     opacity: 60%;
   }
@@ -120,10 +178,13 @@ const GradientButtonOne = styled.a`
   border-width: 0px;
   margin: auto;
   max-width: 30vw;
+  ${media.tablet`
+    max-width: 60vw;
+  `}
+
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-
   &:hover {
     opacity: 60%;
   }
@@ -136,6 +197,9 @@ const GradientButtonTwo = styled.a`
   padding: 20px 40px;
   border-width: 0px;
   max-width: 30vw;
+  ${media.tablet`
+    max-width: 60vw;
+  `}
   text-align: center;
   margin: auto;
   cursor: pointer;

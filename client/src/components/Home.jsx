@@ -48,7 +48,7 @@ const Home = () => {
           </Switch>
           <Github>
             <a
-              href="https://github.com/boristopalov/"
+              href="https://github.com/boristopalov/spotifyhabits"
               target="_blank"
               rel="noopener noreferrer"
             >

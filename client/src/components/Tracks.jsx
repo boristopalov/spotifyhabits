@@ -11,7 +11,7 @@ import Loading from "./Loading";
 
 const TracksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
   margin-top: 50px;
   margin-left: 50px;
