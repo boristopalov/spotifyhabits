@@ -36,10 +36,10 @@ const HomeLink = styled(NavLink)`
   color: #fff;
   align-items: center;
   ${media.tablet`
-    font-size: 18px;
+    font-size: 16px;
   `}
   ${media.phablet`
-    font-size: 16px;
+    font-size: 14px;
   `}
 `;
 
@@ -47,15 +47,20 @@ const StyledMenuItem = styled.li`
   padding-top: 10px;
   color: #fff;
   font-size: 18px;
+  justify-content: center;
   ${media.tablet`
-    font-size: 16px;
+    flex-grow: 1;
+    flex-basis: 100%;
+    height: 100%;
+  `};
+  ${media.tablet`
+    font-size: 14px;
   `}
   ${media.phablet`
-    font-size: 14px;
+    font-size: 12px;
   `}
   display: block;
   padding: 15px;
-  justify-content: center;
 
   &:hover {
     opacity: 60%;

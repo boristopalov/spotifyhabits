@@ -9,7 +9,7 @@ const StyledLogin = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
   min-height: 100vh;
   h1 {
     font-size: 4em;
@@ -20,7 +20,7 @@ const StyledLogin = styled.div`
   h3 {
     font-size: 2em;
     ${media.tablet`
-      font-size: 2em;
+      font-size: 1.5em;
     `};
   }
 `;

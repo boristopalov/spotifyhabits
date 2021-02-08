@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from '../styles/media';
 
 
 const login_uri =
@@ -13,13 +14,20 @@ const StyledLoginButton = styled.a`
   border-radius: 50px;
   padding: 20px 40px;
   border-width: 0px;
-  //margin: 20px 0 70px;
   min-width: 160px;
+  ${media.giant`
+    max-width: 30vw;
+  `}
+  ${media.tablet`
+    max-width: 60vw;
+  `}
+  ${media.phablet`
+    max-width: 80vw;
+    font-size: 18px;
+  `}
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-
-  //margin-left: 11.5em;
 
   &:hover {
     opacity: 60%;
