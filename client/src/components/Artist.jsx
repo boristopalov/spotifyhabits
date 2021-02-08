@@ -63,10 +63,10 @@ const ArtistName = styled.div`
   font-weight: 500;
   font-size: 20px;
   ${media.tablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
   ${media.phablet`
-    font-size: 12px;
+    font-size: 14px;
   `};
 `;
 
@@ -88,10 +88,10 @@ const ArtistGenres = styled.span`
   text-align: center;
   font-size: 20px;
   ${media.tablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
   ${media.phablet`
-    font-size: 12px;
+    font-size: 14px;
   `};
   color: #9b9b9b;
 `;
@@ -101,10 +101,10 @@ const PopularityFollowers = styled.span`
   text-align: center;
   font-size: 20px;
   ${media.tablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
   ${media.phablet`
-    font-size: 12px;
+    font-size: 14px;
   `};
   color: #9b9b9b;
 `;

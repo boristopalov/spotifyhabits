@@ -17,12 +17,20 @@ const TracksGrid = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   `};
   ${media.phablet`
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   `};
   grid-gap: 20px;
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
+  ${media.tablet`
+    margin-left: 25px;
+    margin-right: 25px;
+   `};
+  ${media.phablet`
+    margin-left: 0px;
+    margin-right: 0px;
+   `};
   img {
     max-width: 100%;
     max-height: 100%;
@@ -48,10 +56,10 @@ const ArtistAlbum = styled.div`
   color: #9b9b9b;
   font-size: 16px;
   ${media.tablet`
-    font-size: 12px;
+    font-size: 14px;
   `};
   ${media.phablet`
-    font-size: 10px;
+    font-size: 12px;
   `};
 `;
 
@@ -74,6 +82,14 @@ const AlbumMask = styled.div`
   svg {
     width: 100px;
     height: 100px;
+    ${media.tablet`
+      width: 50px;
+      height: 50px;
+  `};
+    ${media.phablet`
+      width: 25px;
+      height: 25px;
+  `};
     fill: #fff;
   }
 `;
@@ -89,8 +105,8 @@ const AlbumArtwork = styled.div`
     height: 120px;
   `};
   ${media.phablet`
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   `};
   cursor: pointer;
   &:hover,
@@ -124,6 +140,12 @@ const TimeFrame = styled.button`
   color: ${(props) => (props.isActive ? `#fff` : `#9b9b9b`)};
   outline: none;
   font-size: 22px;
+  ${media.tablet`
+    font-size: 18px;
+  `};
+  ${media.phablet`
+    font-size: 14px;
+  `};
   margin-right: 5px;
 
   span {

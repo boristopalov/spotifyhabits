@@ -62,6 +62,12 @@ const TimeFrame = styled.button`
   color: ${(props) => (props.isActive ? `#fff` : `#9b9b9b`)};
   outline: none;
   font-size: 22px;
+  ${media.tablet`
+    font-size: 18px;
+  `};
+  ${media.phablet`
+    font-size: 14px;
+  `};
   margin-right: 5px;
 
   span {

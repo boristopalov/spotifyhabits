@@ -5,9 +5,13 @@ import { Switch, Route } from "react-router-dom";
 import Tracks from "./Tracks";
 import Artists from "./Artists";
 import Habits from './Habits';
+import media from '../styles/media'
 
 
 const Github = styled.div`
+  ${media.tablet`
+    display: none;
+  `};
   width: 45px;
   height: 45px;
   position: fixed;
@@ -46,6 +50,7 @@ const Home = () => {
             <Route exact path="/artists" component={Artists} />
             {/**  not found page */}
           </Switch>
+
           <Github>
             <a
               href="https://github.com/boristopalov/spotifyhabits"
