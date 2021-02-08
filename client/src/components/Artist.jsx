@@ -62,6 +62,12 @@ const ArtistPicContainer = styled.div`
 
 const ArtistName = styled.div`
   display: inline-block;
+  ${media.tablet`
+    font-size: 16px;
+  `}
+  ${media.phablet`
+    font-size: 14px;
+  `}
   margin-left: 20px;
   font-weight: 500;
   font-size: 20px;

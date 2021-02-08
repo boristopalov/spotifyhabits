@@ -171,7 +171,7 @@ const LogoutButton = styled.a`
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1em;
   &:hover {
     opacity: 60%;
   }

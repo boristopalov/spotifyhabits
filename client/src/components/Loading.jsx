@@ -21,6 +21,7 @@ const Bars = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const Bar = styled.div`
