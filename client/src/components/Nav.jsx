@@ -36,10 +36,10 @@ const HomeLink = styled(NavLink)`
   color: #fff;
   align-items: center;
   ${media.tablet`
-    font-size: 16px;
+    font-size: 18px;
   `}
   ${media.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `}
 `;
 
@@ -54,10 +54,10 @@ const StyledMenuItem = styled.li`
     height: 100%;
   `};
   ${media.tablet`
-    font-size: 14px;
+    font-size: 16px;
   `}
   ${media.phablet`
-    font-size: 12px;
+    font-size: 14px;
   `}
   display: block;
   padding: 15px;
