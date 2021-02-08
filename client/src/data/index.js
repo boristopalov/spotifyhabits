@@ -2,10 +2,10 @@ import axios from 'axios';
 import querystring from 'query-string';
 
 //1 hour in milliseconds to keep track of token expiration 
-// const EXPIRATION_TIME = 3600000;
+const EXPIRATION_TIME = 3600000;
 
 
-const EXPIRATION_TIME = 1000;
+//const EXPIRATION_TIME = 1000;
 
 const refresh_uri =
   process.env.NODE_ENV !== "production"
@@ -70,6 +70,7 @@ export const getToken = () => {
     refreshToken = getRefreshToken();
   }
 
+  
   if (getTokenTimestamp() && (Date.now() - getTokenTimestamp() > EXPIRATION_TIME)) {
     console.log('refreshing token');
     refreshAccessToken();
