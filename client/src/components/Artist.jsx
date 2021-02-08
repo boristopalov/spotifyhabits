@@ -7,6 +7,9 @@ import media from "../styles/media";
 const ArtistGrid = styled.div`
   display: grid;
   grid-template-columns: 100px 1fr 1fr 1fr;
+  ${media.tablet`
+    grid-template-columns: 80px 1fr 1fr 1fr;
+  `};
   margin-bottom: 15px;
   align-items: center;
 `;
@@ -73,13 +76,19 @@ const ArtistName = styled.div`
 
 const ArtistPic = styled.div`
   display: flex;
-  align-items: center;  
+  align-items: center;
 
   img {
     width: 100px;
     height: 100px;
     min-width: 100px;
     min-height: 100px;
+    ${media.tablet`
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+      min-height: 80px;
+  `};
     border-radius: 100%;
   }
 `;

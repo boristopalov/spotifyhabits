@@ -46,7 +46,7 @@ const TimeFrame = styled.button`
     font-size: 18px;
   `};
   ${media.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
   margin-left: 20px;
 
@@ -186,6 +186,11 @@ const GradientButtonOne = styled.a`
   max-width: 30vw;
   ${media.tablet`
     max-width: 60vw;
+    font-size: 18px;
+  `}
+  ${media.phablet`
+    max-width: 60vw;
+    font-size: 14px;
   `}
 
   text-align: center;
@@ -205,6 +210,11 @@ const GradientButtonTwo = styled.a`
   max-width: 30vw;
   ${media.tablet`
     max-width: 60vw;
+    font-size: 18px;
+  `}
+  ${media.phablet`
+    max-width: 60vw;
+    font-size: 14px;
   `}
   text-align: center;
   margin: auto;

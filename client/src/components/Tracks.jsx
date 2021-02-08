@@ -144,7 +144,7 @@ const TimeFrame = styled.button`
     font-size: 18px;
   `};
   ${media.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
   margin-right: 5px;
 

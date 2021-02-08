@@ -3,6 +3,7 @@ import { ReactComponent as MicrophoneIcon } from "../images/microphone.svg";
 import { ReactComponent as TrackIcon } from "../images/music.svg";
 import { ReactComponent as HabitsIcon } from "../images/trending.svg";
 import { NavLink } from "react-router-dom";
+import media from '../styles/media'
 
 
 const StyledNavContainer = styled.nav`
@@ -34,17 +35,27 @@ const HomeLink = styled(NavLink)`
   text-decoration: none;
   color: #fff;
   align-items: center;
-
+  ${media.tablet`
+    font-size: 18px;
+  `}
+  ${media.phablet`
+    font-size: 16px;
+  `}
 `;
 
 const StyledMenuItem = styled.li`
   padding-top: 10px;
   color: #fff;
   font-size: 18px;
+  ${media.tablet`
+    font-size: 16px;
+  `}
+  ${media.phablet`
+    font-size: 14px;
+  `}
   display: block;
   padding: 15px;
   justify-content: center;
-  
 
   &:hover {
     opacity: 60%;
